@@ -37,7 +37,7 @@
      <div class="col-7">
         <p>{{ 'Yes' if request.form.get('contactagreement') else 'No'}}</p>
     </div>
-        </div>
+
     <p><a href="{{  url_for('contact') }}">Complete form again</a></p>
  {% else %}
   <form class="row g-3" action="{{ url_for('contact') }}" method="post">
@@ -62,9 +62,6 @@
   </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-
-
 </form>
 {%endif%}
 {% endblock %}
