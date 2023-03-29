@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Contact Me</h1>
+    {% if form_submitted %}
+    <div class="col-12">
+        <h2>Thank you for completing my form!</h2>
+    </div>
+     <div class="col-md-7">
+        <p>First Name</p>
+    </div>
+     <div class="col-7">
+        <p>{{ request.form.get('FirstName')}}</p>
+    </div>
+     <div class="col-7">
+        <p>Last Name</p>
+    </div>
+     <div class="col-7">
+        <p>{{ request.form.get('LastName')}}</p>
+    </div>
+     <div class="col-7">
+        <p>Email</p>
+    </div>
+     <div class="col-7">
+        <p>{{ request.form.get('email')}}</p>
+    </div>
+     <div class="col-7">
+        <p>Phone Number</p>
+    </div>
+     <div class="col-7">
+        <p>{{ request.form.get('PhoneNumber')}}</p>
+    </div>
+     <div class="col-7">
+        <p>Agree to be Contacted:
+    </div>
+     <div class="col-7">
+        <p>{{ 'Yes' if request.form.get('contactagreement') else 'No'}}</p>
+    </div>
+        </div>
+    <p><a href="{{  url_for('contact') }}">Complete form again</a></p>
+ {% else %}
+  <form class="row g-3" action="{{ url_for('contact') }}" method="post">
+        <div class="col-md-7"><label for="FirstName" class="form-label">FirstName</label>
+    <input type="FirstName" class="form-control" id="FirstName" name="FirstName">
+        </div>
+  <div class="mb-7">
+    <label for="LastName" class="form-label">LastName</label>
+    <input type="LastName" class="form-control" id="LastName" name="LastName">
+  </div>
+ <div class="mb-7">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+  </div>
+ <div class="mb-7">
+    <label for="PhoneNumber" class="form-label">Phone Number</label>
+    <input type="Phone Number" class="form-control" id="PhoneNumber" aria-describedby="phonenumberHelp" name="PhoneNumber">
+  </div>
+  <div class="mb-7 form-check">
+    <input type="checkbox" class="form-check-input" id="contactagreement" name="contactagreement">
+    <label class="form-check-label" for="contactagreement">I agree to be contacted</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{%endif%}
+</body>
+</html>
