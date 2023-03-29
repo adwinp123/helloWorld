@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block page_header %}Fill Out Contact Information{% endblock %}
+{% block page_content %}
 
-<div class="container">
-    <h1>Contact Me</h1>
-    {% if form_submitted %}
-    <div class="col-12">
-        <h2>Thank you for completing my form!</h2>
+{% if form_submitted %}
+    <div class col-md-6>
+        <h3>Thank you! You have completed the form.</h3>
     </div>
+
      <div class="col-md-7">
         <p>First Name</p>
     </div>
@@ -46,8 +41,8 @@
     <p><a href="{{  url_for('contact') }}">Complete form again</a></p>
  {% else %}
   <form class="row g-3" action="{{ url_for('contact') }}" method="post">
-        <div class="col-md-7"><label for="FirstName" class="form-label">First Name</label>
-    <input type="FirstName" class="form-control" id="FirstName" name="FirstName">
+        <div class="col-md-7"><label for="first_name" class="form-label">First Name</label>
+    <input type="first_name" class="form-control" id="first_name" name="first_name">
         </div>
   <div class="mb-7">
     <label for="LastName" class="form-label">Last Name</label>
@@ -65,9 +60,10 @@
     <input type="checkbox" class="form-check-input" id="contactagreement" name="contactagreement">
     <label class="form-check-label" for="contactagreement">I agree to be contacted</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+
 </form>
 {%endif%}
-</body>
-
-</html>
+{% endblock %}
