@@ -46,11 +46,11 @@
     <p><a href="{{  url_for('contact') }}">Complete form again</a></p>
  {% else %}
   <form class="row g-3" action="{{ url_for('contact') }}" method="post">
-        <div class="col-md-7"><label for="FirstName" class="form-label">FirstName</label>
+        <div class="col-md-7"><label for="FirstName" class="form-label">First Name</label>
     <input type="FirstName" class="form-control" id="FirstName" name="FirstName">
         </div>
   <div class="mb-7">
-    <label for="LastName" class="form-label">LastName</label>
+    <label for="LastName" class="form-label">Last Name</label>
     <input type="LastName" class="form-control" id="LastName" name="LastName">
   </div>
  <div class="mb-7">
