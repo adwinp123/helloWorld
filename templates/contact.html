@@ -3,7 +3,7 @@
 {% block page_content %}
 
 {% if form_submitted %}
-    <div class col-md-6>
+    <div class col-md-7>
         <h3>Thank you! You have completed the form.</h3>
     </div>
 
@@ -42,19 +42,19 @@
  {% else %}
   <form class="row g-3" action="{{ url_for('contact') }}" method="post">
         <div class="col-md-7"><label for="first_name" class="form-label">First Name</label>
-    <input type="first_name" class="form-control" id="first_name" name="first_name">
+    <input type="text" class="form-control" id="first_name" name="first_name">
         </div>
   <div class="mb-7">
     <label for="LastName" class="form-label">Last Name</label>
-    <input type="LastName" class="form-control" id="LastName" name="LastName">
+    <input type="text" class="form-control" id="LastName" name="LastName">
   </div>
  <div class="mb-7">
     <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+    <input type="email" class="form-control" id="email"  name="email">
   </div>
  <div class="mb-7">
     <label for="PhoneNumber" class="form-label">Phone Number</label>
-    <input type="Phone Number" class="form-control" id="PhoneNumber" aria-describedby="phonenumberHelp" name="PhoneNumber">
+    <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber">
   </div>
   <div class="mb-7 form-check">
     <input type="checkbox" class="form-check-input" id="contactagreement" name="contactagreement">
