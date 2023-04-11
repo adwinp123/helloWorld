@@ -1,5 +1,0 @@
-{% extends "base.html" %}
-{% block page_header %}Greetings{% endblock %}
-{% block page_content %}
-    <p>You entered your favorite course as: <span style="color: blue;">{{request.args.get('course_subject') }} {{ request.args.get('course_number')  }}</span></p>
-{% endblock %}
